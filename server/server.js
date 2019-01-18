@@ -10,12 +10,14 @@ const server = Hapi.server({
 const init = async () => {
     await server.start();
     console.log(
-        'Server running at port ',server.port
+        'Server running at port '
     )
 }
 
 process.on('unhandledRejection', (err) =>{
-    console.log(err);
+    if(err){
+        console.log(err);
+    }
     process.exit(1);
 });
 
